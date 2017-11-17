@@ -16,8 +16,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/greet', function () {
-    return view('actions.greet');
+Route::get('/greet/{name?}', function ($name = null) {
+    return view('actions.greet', ['name' => $name]);
 })->name('greet');
 
 Route::get('/hug', function () {
